@@ -10,7 +10,7 @@ let eventos = [
     ['Jogo de poder', 'Você pode nomear dois jogadores..., caso nomeie, eles deverão trocar uma de suas influências entre si'],
     ['Negócios falidos', 'O Duque não pode ser utilizado durante esse turno'],
     ['Bloqueio comercial dos mares', 'O capitão não pode ser utilizado durante esse turno'],
-    ['Invertigações em andamento', 'O assassino não pode ser utilizado durante esse turno'],
+    ['Investigações em andamento', 'O assassino não pode ser utilizado durante esse turno'],
     ['Negociações mal resolvidas', 'O embaixador não pode ser utilizado durante esse turno'],
     ['Perdendo aliados', 'Nenhuma habilidade de personagem pode ser utilizada durante esse turno'],
     ['Perdendo aliados', 'Nenhuma habilidade de personagem pode ser utilizada durante esse turno'],
