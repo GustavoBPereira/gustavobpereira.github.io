@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen+Mono|Roboto+Mono');
+
+body{
+    font-family: 'Roboto Mono', monospace;
+}
+
+#eventos{
+    font-size: 475%;
+    font-family: 'Oxygen Mono', monospace;
+}
+
+#cartas-rest{
+    margin-top: 2%;
+    font-size: 400%;
+    font-family: 'Oxygen Mono', monospace;
+}
+
+.principal{
+    height: 125%;
+}
+
+#tit-evento{
+    font-weight: bold;
+    text-align: center;
+    font-size: 150%;
+    color: gainsboro;
+}
+
+#txt-evento{
+    font-size: 150%;
+    text-align: center;
+    color: gainsboro;
+}
+
+.btn{
+    margin-top: 2%;
+    text-align: justify;
+    font-size: 175%;
+}
