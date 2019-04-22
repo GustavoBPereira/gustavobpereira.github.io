@@ -23,17 +23,19 @@ body{
     font-weight: bold;
     text-align: center;
     font-size: 150%;
-    color: gainsboro;
+    color: #dcdcdc  ;
 }
 
 #txt-evento{
     font-size: 150%;
     text-align: center;
-    color: gainsboro;
+    color: #dcdcdc;
 }
 
 .btn{
     margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
     text-align: justify;
     font-size: 175%;
 }
