@@ -1,9 +1,16 @@
 let eventos = [];
-
+let primeira = true;
 function start(){
+    if(primeira == false){
+        decisao = confirmarRecomeco();
+        if(decisao == false){
+            return;
+        }
+    }
     eventos = inciarDeck();
     cartasRestantes();
     limparTela();
+    primeira = false;
 }
 
 function inciarDeck(){
@@ -72,4 +79,8 @@ function preecherTabela(local,texto, cor){
 function limparTela(){
     preecherTabela("titulo","titulo", "#dcdcdc")
     preecherTabela("texto","evento", "#dcdcdc")
+}
+
+function confirmarRecomeco(){
+    return confirm("Quer mesmo reiniciar?")
 }
