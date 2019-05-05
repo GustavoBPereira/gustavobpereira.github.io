@@ -5,6 +5,14 @@ body{
     max-width: 100%;
 }
 
+.religiao{
+    margin-left: 45%;
+}
+
+label{
+    font-size: 135%;
+}
+
 #eventos{
     font-size: 475%;
     font-family: 'Oxygen Mono', monospace;
