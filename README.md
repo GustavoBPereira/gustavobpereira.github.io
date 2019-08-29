@@ -13,6 +13,8 @@
 ### A aplicação
 **_Este site estático foi criado com o objetivo de usar esse baralho em uma aplicação web, através do celular ou pc._**
 
+
+
 ## Como usar
 
 ### Sem religião
