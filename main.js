@@ -1,26 +1,16 @@
-let eventos = [];
-let primeira = true;
+let events = [];
 let religiao = false;
 
 function start(){
-    if(primeira == false){
-        decisao = confirmarRecomeco();
-        if(decisao == false){
-            return;
-        }
-    }
-    if (document.getElementById("religiao").checked == true){
-        religiao = true;
-    }else {
-        religiao = false;
-    }
-    eventos = inciarDeck(religiao);
-    cartasRestantes();
-    limparTela();
-    primeira = false;
+    events = createDeck(religiao);
+    updateRemainingCards(remainingCards())
+    first_card = getCard()
+    card_element = document.querySelector('div#front')
+    card_element.querySelector('p.card-title').textContent = first_card['title']
+    card_element.querySelector('p.card-content').textContent = first_card['content']
 }
 
-function inciarDeck(religiao){
+function createDeck(religiao){
     deck = [
         ['Cartas não respondidas', 'A ação Ajuda Externa não pode ser efetuada durante esse turno'],
         ['Cartas não respondidas', 'A ação Ajuda Externa não pode ser efetuada durante esse turno'],
@@ -67,34 +57,21 @@ function inciarDeck(religiao){
     return deck;
 }
 
-function sortearEvento(){
+function getCard(){
 
-    sorteio = Math.floor(Math.random() * eventos.length);
-    preecherTabela("titulo", eventos[sorteio][0], "#000000");
-    preecherTabela("texto", eventos[sorteio][1], "#000000");
-    eventos.splice(sorteio, 1)
-    cartasRestantes();
-}
+    let random_index = Math.floor(Math.random() * events.length);
 
-function cartasRestantes(){
-    document.getElementById("cartas-rest").innerHTML = "<h2>Cartas restantes: "+ eventos.length +"</h2>"
-}
-
-function preecherTabela(local,texto, cor){
-    if(local == "titulo"){
-        document.getElementById("tit-evento").innerHTML = texto;
-        document.getElementById("tit-evento").style.color = cor;
-    }else{
-        document.getElementById("txt-evento").innerHTML = texto;
-        document.getElementById("txt-evento").style.color = cor;
+    events.splice(random_index, 1)
+    return {
+        'title': events[random_index][0],
+        'content': events[random_index][1]
     }
 }
 
-function limparTela(){
-    preecherTabela("titulo","titulo", "#dcdcdc")
-    preecherTabela("texto","evento", "#dcdcdc")
+function remainingCards(){
+    return events.length
 }
 
-function confirmarRecomeco(){
-    return confirm("Quer mesmo reiniciar?")
+function updateRemainingCards(quantity){
+    document.getElementById('remaining-cards').textContent = quantity
 }
