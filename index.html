@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos no coup</title>
     <link rel="icon" type="image/png" href="cards.png"/>
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
@@ -11,46 +11,27 @@
 </head>
 
 <body>
-    <div>
-        <div>
-            <h1 class="text-center" id="eventos">Eventos no coup</h1>
-            <input type="checkbox" id="religiao" class="religiao">
-            <label for="religiao">Com religião</label>
-            <h2 class="text-center" id="cartas-rest">Cartas restantes: </h2>
-            <div class="row">
-                <div class="col-sm">
-                    <h3 class="desc text-center">Titulo</h3>
-                </div>
-                
-                <div class="col-sm">
-                    <h3 class="desc text-center">Evento</h3>
-                </div>
-                
-            </div>
-            <div class="principal row">
-                <div class="col-sm border">
-                    <p id="tit-evento">titulo</p>
-                </div>
-                <div class="col-sm border">
-                    <p id="txt-evento">evento</p>
-                </div>
-            </div>
-        </div>
-        <div>
-            <form class="text-center">
-                <input type="button" onclick="sortearEvento()" class="btn btn-dark" value=" SORTEAR ">
-                <input type="button" onclick="start()" class="btn btn-dark" value="RECOMEÇAR">
-            </form>
-        </div>
-        <div>
-            <footer class="text-center">
-                <a href="regras.html">Regras</a>
-                <a target="_blank" href="https://www.ludopedia.com.br/jogo/coup/anexos/90174">Créditos</a>
-            </footer>
-        </div>
+
+<div class="container">
+    <h1 class="text-center">Eventos no coup</h1>
+
+    <h2 class="text-center">Cartas restantes <span id="remaining-cards">21</span></h2>
+
+    <div class="container border border-1 border-dark flip-card unselectable" id="card">
+        <p class="text-left" id="card-title">Bloqueio comercial dos mares</p>
+        <p class="text-center" id="card-content">Você pode nomear outro jogador e dar-lhe uma opção: 1-Pagar duas moedas a você para manter suas influências 2-Trocar uma influência</p>
     </div>
-    <script src="main.js" onload="start()"></script>
-    
+</div>
+
+<div class="container text-center" id="shuffle-container">
+    <button class="text-center btn btn-dark" id="shuffle-button">Embaralhar</button>
+</div>
+
+<footer class="d-flex justify-content-between">
+    <a class="text-left">Créditos</a>
+    <a class="text-right">Regras</a>
+</footer>
+
 </body>
 
 </html>
