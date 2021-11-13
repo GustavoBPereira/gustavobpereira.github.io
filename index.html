@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="cards.png"/>
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="flip_card.css">
 </head>
 
 <body>
@@ -17,9 +18,17 @@
 
     <h2 class="text-center">Cartas restantes <span id="remaining-cards">21</span></h2>
 
-    <div class="container border border-1 border-dark flip-card unselectable" id="card">
-        <p class="text-left" id="card-title">Bloqueio comercial dos mares</p>
-        <p class="text-center" id="card-content">Você pode nomear outro jogador e dar-lhe uma opção: 1-Pagar duas moedas a você para manter suas influências 2-Trocar uma influência</p>
+    <div class="card-container">
+        <div class="border border-1 border-dark unselectable" id="card">
+            <div id="front">
+                <p class="text-left card-title">Investigações em andamento</p>
+                <p class="text-center card-content">O(s) jogador(es) com a maior riqueza deve(m) pagar duas moedas para o banco, então o(s) jogador(es) sem nenhuma riqueza deve(m) receber duas moedas do banco</p>
+            </div>
+            <div class="d-none" id="back">
+                <p class="text-left card-title"></p>
+                <p class="text-center card-content"></p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -32,6 +41,6 @@
     <a class="text-right">Regras</a>
 </footer>
 
+<script src="flip_card.js"></script>
 </body>
-
 </html>

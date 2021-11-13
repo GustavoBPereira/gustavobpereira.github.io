@@ -17,14 +17,12 @@ h2 {
 
 #card {
     margin-top: 22vw;
+    background-color: #f8f8f8;
 }
 
 #card-title {
     padding-top: 1.25vw;
     padding-left: 1.5vw;
-}
-.flip-card {
-    background-color: #f8f8f8;
 }
 
 #shuffle-container {

@@ -1,0 +1,22 @@
+
+.card-container {
+  background: none;
+}
+
+#card {
+  transform-style: preserve-3d;
+  transition: all 1.0s ease;
+}
+
+#front {
+  backface-visibility: hidden;
+}
+
+#back {
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.flip-card {
+  transform: rotateY(180deg);
+}
