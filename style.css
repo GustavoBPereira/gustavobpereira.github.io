@@ -18,11 +18,15 @@ h2 {
 #card {
     margin-top: 22vw;
     background-color: #f8f8f8;
+    height: 32vh;
 }
 
-#card-title {
-    padding-top: 1.25vw;
-    padding-left: 1.5vw;
+.card-title {
+    padding-top: 1.75vw;
+}
+
+.card-content {
+    padding-top: 4vw;
 }
 
 #shuffle-container {
