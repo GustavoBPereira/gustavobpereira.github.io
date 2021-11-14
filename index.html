@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="flip_card.css">
+    <script src="bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -33,13 +34,28 @@
 </div>
 
 <div class="container text-center" id="shuffle-container">
-    <button class="text-center btn btn-dark" id="shuffle-button">Embaralhar</button>
+    <button type="button" class="text-center btn btn-dark" data-bs-toggle="modal" id="shuffle-button" data-bs-target="#shuffleModal">Embaralhar</button>
 </div>
-
 <footer class="d-flex justify-content-between">
     <a class="text-left">Créditos</a>
     <a class="text-right">Regras</a>
 </footer>
+
+
+<!-- Modal -->
+<div class="modal fade" id="shuffleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+           <input type="checkbox" id="use_dlc" name="use_dlc"><label class="ps-2" for="use_dlc">Usar expansão "A reforma"</label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-dark">Embaralhar</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="main.js" onload="start()"></script>
 <script src="flip_card.js"></script>
 </body>
