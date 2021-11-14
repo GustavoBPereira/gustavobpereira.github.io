@@ -58,14 +58,16 @@ function createDeck(religiao){
 }
 
 function getCard(){
-
+    if (deckIsEmpty()) {
+        return 0;
+    }
     let random_index = Math.floor(Math.random() * events.length);
-
-    events.splice(random_index, 1)
-    return {
+    let card = {
         'title': events[random_index][0],
         'content': events[random_index][1]
     }
+    events.splice(random_index, 1)
+    return card
 }
 
 function remainingCards(){
@@ -74,4 +76,8 @@ function remainingCards(){
 
 function updateRemainingCards(quantity){
     document.getElementById('remaining-cards').textContent = quantity
+}
+
+function deckIsEmpty() {
+    return remainingCards() == 0;
 }
