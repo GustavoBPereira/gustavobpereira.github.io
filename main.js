@@ -17,6 +17,10 @@ function startGame() {
     document.querySelector('h2').classList.remove('d-none')
 }
 
+function stopGame() {
+    gameIsRunning = false
+}
+
 function createDeck(dlc){
     let deck = [
         ['Cartas não respondidas', 'A ação Ajuda Externa não pode ser efetuada durante esse turno'],
@@ -66,7 +70,11 @@ function createDeck(dlc){
 
 function getCard(){
     if (deckIsEmpty()) {
-        return 0;
+        stopGame()
+        return {
+            'title': 'Acabaram as cartas',
+            'content': 'Para recomeçar, clique novamente em embaralhar'
+        };
     }
     let random_index = Math.floor(Math.random() * events.length);
     let card = {
