@@ -37,12 +37,14 @@
     <button type="button" class="text-center btn btn-dark" data-bs-toggle="modal" id="shuffle-button" data-bs-target="#shuffleModal">Embaralhar</button>
 </div>
 <footer class="d-flex justify-content-between">
-    <a class="text-left" target="_blank" href="https://www.ludopedia.com.br/jogo/coup/anexos/90174">Créditos</a>
-    <a class="text-right">Regras</a>
+    <button class="btn btn-secondary footer-btn">
+        <a class="footer-link" target="_blank" href="https://www.ludopedia.com.br/jogo/coup/anexos/90174">Créditos</a>
+    </button>
+    <button class="btn btn-secondary footer-btn" data-bs-toggle="modal" data-bs-target="#rulesModal">Regras</button>
 </footer>
 
 
-<!-- Modal -->
+<!-- Shuffle Modal -->
 <div class="modal fade" id="shuffleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -56,6 +58,26 @@
     </div>
   </div>
 </div>
+
+<!-- Rules Modal -->
+<div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Intriga na corte</h5>
+            </div>
+            <div class="modal-body">
+                <p> - Antes de um jogador executar uma ação, ele deverá abrir uma carta de evento e efetuar seu texto.</p>
+                <p> - Os eventos são abertos a partir da segunda rodada.</p>
+                <p> - Quando restarem apenas três jogadores, os eventos não poderão mais ser abertos</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="main.js" ></script>
 <script src="flip_card.js"></script>
 </body>

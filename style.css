@@ -40,16 +40,15 @@ footer {
     width: 100%;
 }
 
+.footer-btn {
+    font-size: 1.75vh;
+    width: 12vh;
+}
 
-
-
-
-
-
-
-
-
-
+a.footer-link {
+    color: inherit;
+    text-decoration: inherit;
+}
 
 .unselectable {
     -webkit-touch-callout: none;
