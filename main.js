@@ -1,18 +1,24 @@
 let events = [];
-let religiao = false;
 let gameIsRunning = false
 
-function start(){
-    // events = createDeck(religiao);
-    // updateRemainingCards(remainingCards())
-    // first_card = getCard()
-    // card_element = document.querySelector('div#front')
-    // card_element.querySelector('p.card-title').textContent = first_card['title']
-    // card_element.querySelector('p.card-content').textContent = first_card['content']
+function shuffleDeck(){
+    let useDlc = document.getElementById('useDlc').checked
+    events = createDeck(useDlc);
+    startGame()
 }
 
-function createDeck(religiao){
-    deck = [
+function startGame() {
+    gameIsRunning = true
+    updateRemainingCards(remainingCards())
+    let first_card = getCard()
+    let card_element = document.querySelector('div#front')
+    card_element.querySelector('p.card-title').textContent = first_card['title']
+    card_element.querySelector('p.card-content').textContent = first_card['content']
+    document.querySelector('h2').classList.remove('d-none')
+}
+
+function createDeck(dlc){
+    let deck = [
         ['Cartas não respondidas', 'A ação Ajuda Externa não pode ser efetuada durante esse turno'],
         ['Cartas não respondidas', 'A ação Ajuda Externa não pode ser efetuada durante esse turno'],
         ['Um dia ruim', 'A ação Renda não pode ser efetuada durante esse turno'],
@@ -40,7 +46,7 @@ function createDeck(religiao){
         ['Sussurros da corte', 'Escolha outro jogador, a menos que ele lhe pague uma moeda, olhe uma de suas influências e decida se ele deve mantê-la ou trocá-la'],
     ];
 
-    if(religiao == true){
+    if(dlc == true){
         deck.push(
             ['Milagres têm preços','Cada jogador deve pagar uma moeda para o banco das igrejas.'],
             ['Sussurros na sacristia','Você deve escolher entre converter-se ou converter outro jogador.'],
