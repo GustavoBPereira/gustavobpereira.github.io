@@ -1,13 +1,14 @@
 let events = [];
 let religiao = false;
+let gameIsRunning = false
 
 function start(){
-    events = createDeck(religiao);
-    updateRemainingCards(remainingCards())
-    first_card = getCard()
-    card_element = document.querySelector('div#front')
-    card_element.querySelector('p.card-title').textContent = first_card['title']
-    card_element.querySelector('p.card-content').textContent = first_card['content']
+    // events = createDeck(religiao);
+    // updateRemainingCards(remainingCards())
+    // first_card = getCard()
+    // card_element = document.querySelector('div#front')
+    // card_element.querySelector('p.card-title').textContent = first_card['title']
+    // card_element.querySelector('p.card-content').textContent = first_card['content']
 }
 
 function createDeck(religiao){
