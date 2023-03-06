@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leilões do ludopedia</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function search(formData) {
+            axios.get('http://127.0.0.1:8001/search?q=' + formData.get('q'))
+                .then(function(response) {
+                    app.sales = []
+                    app.itens = response.data
+                })
+                .catch(function(error) {});
+        }
+
+        function detail(game_name) {
+            axios.get('http://127.0.0.1:8001/detail?q=' + game_name + '&include_not_sold=' + app.notSoldIncluded).then(function(response) {
+                    app.itens = []
+                    app.sales = response.data;
+                })
+                .catch(function(error) {});
+        }
+    </script>
+</head>
+<body>
+<div id="app">
+    <h1>Leilões do ludopedia</h1>
+    <form v-on:submit.prevent="searchForm">
+        <label for="q">Item:</label>
+        <input type="text" id="q" name="q" v-model="q">
+        <br><br>
+        <input type="checkbox" id="include_not_sold" name="include_not_sold" v-model="notSoldIncluded">
+        <label for="include_not_sold">Itens não arrematados</label>
+        <br><br>
+        <input type="submit" value="Buscar">
+    </form>
+
+    <div v-show="itens.length">
+        <table>
+            <tr>
+                <th>Jogo</th>
+                <th>Qtde de anuncios</th>
+            </tr>
+            <tr v-for="item in itens">
+                <th @click="detailData()">{{ item.name }}</th>
+                <th>{{ item.quantity }}</th>
+            </tr>
+        </table>
+    </div>
+    <div v-show="sales.length">
+        <table>
+            <tr>
+                <th>Link</th>
+                <th>Título</th>
+                <th>Estado</th>
+                <th>Preço</th>
+                <th>Data</th>
+            </tr>
+            <tr v-for="item in sales">
+                <th><a target="blank" :href="leilao_link(item.leilao_id)">leilão</a></th>
+                <th>{{ item.title }}</th>
+                <th>{{ item.state }}</th>
+                <th>{{ item.price }}</th>
+                <th>{{ item.finish_at | formatDate }}</th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          q: '',
+          notSoldIncluded: false,
+          itens: [],
+          sales: []
+        },
+        methods: {
+          searchForm: function() {
+            search(new FormData(event.target));
+          },
+          detailData: function(game_id) {
+            detail(event.target.textContent);
+          },
+          leilao_link: function(_id) {
+                return "https://ludopedia.com.br/leiloes?id_leilao=" + _id
+            }
+        },
+        filters: {
+            formatDate: function(date) {
+                if (date) {
+                    return moment(String(date)).format('DD/MM/YYYY hh:mm')
+                }
+            }
+        }
+      });
+</script>
+</body>
+</html>

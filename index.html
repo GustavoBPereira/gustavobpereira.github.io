@@ -1,84 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos no coup</title>
-    <link rel="icon" type="image/png" href="cards.png"/>
-    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="static/css/flip_card.css">
-    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
-
 <body>
+<h1 id="meus-projetos-pessoais">Meus projetos pessoais</h1>
+<p><strong>Acesse em <a href="https://gustavobpereira.github.io/">gustavobpereira.github.io</a></strong></p>
+<h3 id="-leil-es-do-ludopedia-https-gustavobpereira-github-io-ludopedia-html-"><a href="https://gustavobpereira.github.io/ludopedia.html">Leilões do Ludopedia</a></h3>
+<p><strong><em>O ludopedia é um forum brasileiro de boardgames.</em></strong></p>
+<p>Dentro da plataforma deles existem leilões, criei um crawler e disponibilizei essas informações em uma api, esta é a interface para elas.  </p>
+<h3 id="-eventos-para-coup-https-gustavobpereira-github-io-coup-html-"><a href="https://gustavobpereira.github.io/coup.html">Eventos para coup</a></h3>
+<p><strong><em>Coup é um card game publicado no Brasil pela Mandala jogos em 2014.</em></strong></p>
+<p>Um usuário da ludopedia <a href="https://www.ludopedia.com.br/jogo/coup/anexos/90174">Lucas Rosa</a>, criou um baralho de eventos para o coup que adiciona uma nova mecânica para o jogo. E eu fiz essa interace para usar no celular.</p>
 
-<div class="container">
-    <h1 class="text-center">Eventos no coup</h1>
-
-    <h2 class="text-center d-none">Cartas restantes <span id="remaining-cards"></span></h2>
-
-    <div class="card-container">
-        <div class="rounded-3 unselectable" id="card">
-            <div id="front">
-                <p class="text-center card-title">Comece clicando em embaralhar</p>
-                <p class="text-center card-content">Para entender como usar, basta clicar em regras logo abaixo</p>
-            </div>
-            <div class="d-none" id="back">
-                <p class="text-center card-title"></p>
-                <p class="text-center card-content"></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container text-center" id="shuffle-container">
-    <button type="button" class="text-center btn btn-dark" data-bs-toggle="modal" id="shuffle-button" data-bs-target="#shuffleModal">Embaralhar</button>
-</div>
-<footer class="d-flex justify-content-between">
-    <button class="btn btn-secondary footer-btn">
-        <a class="footer-link" target="_blank" href="https://www.ludopedia.com.br/jogo/coup/anexos/90174">Créditos</a>
-    </button>
-    <button class="btn btn-secondary footer-btn" data-bs-toggle="modal" data-bs-target="#rulesModal">Regras</button>
-</footer>
-
-
-<!-- Shuffle Modal -->
-<div class="modal fade" id="shuffleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-           <input type="checkbox" id="useDlc" name="useDlc"><label class="ps-2" for="useDlc">Usar expansão "A reforma"</label>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal" onclick="shuffleDeck()">Embaralhar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Rules Modal -->
-<div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Intriga na corte</h5>
-            </div>
-            <div class="modal-body">
-                <p> - Antes de um jogador executar uma ação, ele deverá abrir uma carta de evento e efetuar seu texto.</p>
-                <p> - Os eventos são abertos a partir da segunda rodada.</p>
-                <p> - Quando restarem apenas três jogadores, os eventos não poderão mais ser abertos</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="static/js/main.js" ></script>
-<script src="static/js/flip_card.js"></script>
 </body>
 </html>
